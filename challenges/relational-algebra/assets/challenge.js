@@ -33,7 +33,9 @@
   }
 
   // -------------------------------------------------------- milestones
-  var KEY = 'papc-challenge:v1';
+  // One key per challenge folder: every page of papc-rhul.github.io shares
+  // the same localStorage, so challenges must not share a key.
+  var KEY = 'papc-challenge:' + window.location.pathname.replace(/[^\/]*$/, '');
   function load() {
     try {
       var s = JSON.parse(window.localStorage.getItem(KEY));

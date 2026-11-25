@@ -1,9 +1,9 @@
-# The PaPC challenge website
+# The relational algebra challenge
 
-The website version of the club's first challenge (a verified relational
-algebra library in Lean), built from `_src/` into plain static pages:
+The website of the club's first challenge (a verified relational algebra
+library in Lean), built from `_src/` into plain static pages:
 
-    papc-challenge/
+    challenges/relational-algebra/
       index.html, level-*.html, laws.html   generated: do not edit
       assets/                               challenge.css, challenge.js, logo
       _src/                                 sources (Jekyll skips "_" folders)
@@ -11,23 +11,23 @@ algebra library in Lean), built from `_src/` into plain static pages:
         pages/*.txt                         one file per page
         links.tsv                           book links, copied from the decks
 
-## Where it lives, and how to remove it
+## Where it lives
 
-For now it is **unlisted** on dcastrop.github.io, at
-<https://dcastrop.github.io/papc-challenge/>. Nothing links to it. Every page
-has `<meta name="robots" content="noindex">`, and `_config.yml` keeps the
-folder out of `sitemap.xml`.
+It is one folder of `challenges/` on the club's site, at
+<https://papc-rhul.github.io/challenges/relational-algebra/>, listed on
+`challenges/index.html`. Every link inside the folder is relative, and the
+footer links up to the list of challenges.
 
-To remove it: delete this folder, and the `papc-challenge` entry under
-`defaults` in `_config.yml`. Nothing else refers to it.
+For now it is **unlisted**: nothing on the club's site links to `challenges/`,
+and every page has `<meta name="robots" content="noindex">`. To list it, set
+`HIDDEN = False` in `build.py`, rebuild, remove the same line from
+`challenges/index.html`, and link to `challenges/` from the club's page.
 
-To move it to the club's website (papc-rhul.github.io, also Simple.css):
-copy the whole folder there (all links inside it are relative), set
-`HIDDEN = False` in `build.py`, rebuild, and link to it from the club's page.
+To remove it: delete this folder, and its entry in `challenges/index.html`.
 
 ## Build
 
-    python3 papc-challenge/_src/build.py
+    python3 challenges/relational-algebra/_src/build.py
 
 The build writes the pages next to `_src`. It stops on an unknown link key,
 container, directive or level, and when an internal link points to a page or
@@ -51,9 +51,11 @@ on your computer". Level 1 also has a part "Before you start".
   click. **Exercises** are in Lean, with hints, never full solutions. Some
   exercises are "on paper" because the PDFs had them so (3F.2, 4T.3).
 - **Milestones** are ticked by the student. Ticks live in the browser's
-  `localStorage` only (key `papc-challenge:v1`), and the map on the front page
-  shows them. Changing the number of milestones of a level renumbers its
-  keys, so students may lose ticks: prefer adding at the end.
+  `localStorage` only, and the map on the front page shows them. The storage
+  key is `papc-challenge:` followed by the folder's path, so each challenge
+  keeps its own ticks; renaming the folder loses them. Changing the number of
+  milestones of a level renumbers its keys, so students may lose ticks: prefer
+  adding at the end.
 - The track graph is fixed in `build.py` (`LEVELS`, `level_map`): after
   Level 1, 2F→5F (FPIL) and 2T→5T (TPIL), side by side; both lead to Level 6;
   then 7→8 and 9.

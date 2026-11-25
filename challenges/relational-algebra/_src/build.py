@@ -15,10 +15,10 @@ from pathlib import Path
 SRC = Path(__file__).resolve().parent
 OUT = SRC.parent
 
-# Unlisted while the site lives on dcastrop.github.io: pages ask search
-# engines not to index them. Set to False when it moves to the club's site.
+# Unlisted for now: pages ask search engines not to index them. Set to False,
+# and rebuild, when the club's page links to the challenges.
 HIDDEN = True
-CLUB_URL = 'https://papc-rhul.github.io/'
+CLUB_URL = '../../'
 SIMPLE_CSS = 'https://cdn.jsdelivr.net/npm/simpledotcss@2.3.7/simple.min.css'
 KATEX = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist'
 
@@ -673,7 +673,7 @@ def header_html(current, h1, kicker=''):
 
 
 FOOTER = f'''<footer>
-<p>The first challenge of the <a href="{CLUB_URL}">Proofs and Programs Club @ RHUL</a>.</p>
+<p><a href="../">All challenges</a> of the <a href="{CLUB_URL}">Proofs and Programs Club @ RHUL</a></p>
 <p>Your ticked milestones are kept in this browser only.</p>
 </footer>
 </body>

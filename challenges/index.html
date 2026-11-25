@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- The club's challenges. Each challenge is a website in its own folder here
+     (see relational-algebra/_src/README.md). To add one: put its folder next
+     to relational-algebra/, link its pages back to "../", give it a <li> in
+     the list below, and keep its milestone ticks under its own storage key. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Unlisted for now: delete the next line when the club's page links here -->
+<meta name="robots" content="noindex">
+<title>Challenges · Proofs and Programs Club @ RHUL</title>
+<meta name="description" content="Challenges of the Proofs and Programs Club @ RHUL: programs to write in Lean, and prove correct, by hand.">
+<link rel="icon" href="../images/logo.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss@2.3.7/simple.min.css">
+<style>
+  :root {
+    --papc: #eb6323;              /* the club's orange */
+    --accent: #b4460f;            /* the same hue, dark enough for text */
+    --accent-hover: #8a3409;
+    --header-bg: hsl(203, 20%, 86%);
+    --tint: #fdf4ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #f4934f;
+      --accent-hover: #ffc29a;
+      --header-bg: hsl(203, 18%, 20%);
+      --tint: #30241c;
+    }
+  }
+  body {
+    font-size: 1.08rem;
+    grid-template-columns: 1fr min(48rem, calc(100% - 2rem)) 1fr;
+  }
+  body > header { background-color: var(--header-bg); padding: 0 1rem 1.25rem; }
+  header .club { margin: 1rem auto .4rem; font-size: .95rem; }
+  header .club a, header .club a:visited {
+    color: var(--text); text-decoration: none; font-weight: 600;
+    display: inline-flex; align-items: center; gap: .55rem;
+  }
+  header .club a:hover { text-decoration: underline; }
+  header .club img { height: 48px; width: auto; }
+  body > header h1 { font-size: 2.3rem; margin: .6rem auto .4rem; }
+  ul.challenges { list-style: none; padding: 0; margin: 1.5rem 0 2.5rem; }
+  ul.challenges li {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--papc);
+    border-radius: 8px;
+    padding: .1rem 1.2rem .3rem;
+    margin: 0 0 1.25rem;
+  }
+  ul.challenges h2 { font-size: 1.4rem; margin: .9rem 0 .5rem; }
+  .callout {
+    text-align: center;
+    border: 2px solid var(--papc);
+    border-radius: 10px;
+    background: var(--tint);
+    padding: .3rem 1.4rem;
+    margin: 0 0 2rem;
+  }
+  .callout h2 { margin-top: 1.1rem; font-size: 1.5rem; }
+  .callout p { margin: .8rem auto; max-width: 34rem; }
+</style>
+</head>
+<body>
+<header>
+<p class="club"><a href="../"><img src="../images/logo.svg" alt="" width="38" height="48"> The Proofs and Programs Club @ RHUL</a></p>
+<h1>Challenges</h1>
+<p>Have a go at the challenges you find intriguing.</p>
+</header>
+<main>
+<ul class="challenges">
+  <li>
+    <h2><a href="relational-algebra/">A verified relational algebra library in Lean</a></h2>
+    <p>Teach Lean to answer questions about tables, and prove, by hand, that its answers are always right. It starts from what a table is, then follows FPIL, TPIL, or both.</p>
+  </li>
+</ul>
+<div class="callout">
+<h2>We welcome your challenges!</h2>
+<p>Got a program you wish were proved correct? A theorem you would love to see Lean check?</p>
+<p><strong>Pitch it to us: it could be another challenge for the club!</strong></p>
+<p>Tell us on Discord, or come along any Thursday.</p>
+</div>
+</main>
+<footer>
+<p><a href="../">The Proofs and Programs Club @ RHUL</a></p>
+</footer>
+</body>
+</html>
